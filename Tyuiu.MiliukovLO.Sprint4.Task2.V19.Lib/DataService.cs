@@ -7,9 +7,9 @@ namespace Tyuiu.MiliukovLO.Sprint4.Task2.V19.Lib
         public int Calculate(int[] array)
         {
             int result = 0;
-            for (int i = 0; i < array.Length - 1; i++)
+            for (int i = 0; i <= array.Length - 1; i++)
             {
-                if (array[i] % 2 != 0)
+                if (array[i] % 2 == 1)
                 {
                     result += array[i];
                 }
