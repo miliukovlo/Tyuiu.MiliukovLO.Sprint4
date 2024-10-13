@@ -13,7 +13,7 @@ namespace Tyuiu.MiliukovLO.Sprint4.Task7.V12.Lib
             {
                 for (int j = 0; j < m; j++)
                 {
-                    matrix[i, j] = int.Parse(value[i*3+j].ToString());
+                    matrix[i, j] = int.Parse(value[i*4+j].ToString());
                     if (matrix[i, j] % 2 == 1)
                     {
                         sum += matrix[i, j];

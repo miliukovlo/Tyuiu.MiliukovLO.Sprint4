@@ -10,7 +10,7 @@ namespace Tyuiu.MiliukovLO.Sprint4.Task7.V12.Test
         {
             DataService ds = new();
             string test = "658932125478";
-            Assert.AreEqual(33, ds.Calculate(3,4,test));
+            Assert.AreEqual(30, ds.Calculate(3,4,test));
         }
     }
 }
