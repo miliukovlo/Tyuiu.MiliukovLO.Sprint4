@@ -1,44 +1,38 @@
-﻿using Tyuiu.MiliukovLO.Sprint4.Task4.V17.Lib;
+﻿using Tyuiu.MiliukovLO.Sprint4.Task5.V9.Lib;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
+        Random rnd = new();
         DataService ds = new();
         Console.Title = "Спринт #4 | Выполнил: Милюков Л. О. | ИИПб 24-2";
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* Спринт #4                                                                ");
         Console.WriteLine("* Тема: Двумерные массивы. (статический ввод)                              ");
-        Console.WriteLine("* Задание #4                                                               ");
-        Console.WriteLine("* Вариант #17                                                              ");
+        Console.WriteLine("* Задание #5                                                               ");
+        Console.WriteLine("* Вариант #9                                                               ");
         Console.WriteLine("* Выполнил: Милюков Леонид Олегович | ИИПб 24-2                            ");
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* УСЛОВИЕ:                                                                 ");
         Console.WriteLine("* Дан двумерный целочисленный массив 5 на 5 элементов, заполненный         ");
-        Console.WriteLine("* значениями с клавиатуры в диапазоне от 2 до 7. Найдите сумму четных      ");
-        Console.WriteLine("* элементов массива.                                                       ");
+        Console.WriteLine("* случайными значениями в диапазоне от -4 до 4. Найти количество           ");
+        Console.WriteLine("* положительных элементов                                                  ");
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                         ");
         Console.WriteLine("***************************************************************************");
-        Console.WriteLine("Введите количество столбцов:                                               ");
-        int x = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Введите количество строк:                                               ");
-        int y = Convert.ToInt32(Console.ReadLine());
-        int[,] arr = new int[x, y];
-        for (int i = 0; i < arr.GetLength(0); i++)
+        int[,] matrix = new int[5, 5];
+        for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            for (int j = 0; j < arr.GetLength(1); j++)
+            for (int j = 0; j < matrix.GetLength(1); j++)
             {
-                int column = i + 1;
-                int row = j + 1;
-                Console.WriteLine("Введите значение для " + column + " столбца "  + row + " строки");
-                arr[i,j] = Convert.ToInt32(Console.ReadLine());
+                matrix[i, j] = rnd.Next(-4, 4);
             }
         }
         Console.WriteLine("*                                                                          ");
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                               ");
         Console.WriteLine("***************************************************************************");
-        Console.WriteLine(ds.Calculate(arr));
+        Console.WriteLine(ds.Calculate(matrix));
     }
 }
